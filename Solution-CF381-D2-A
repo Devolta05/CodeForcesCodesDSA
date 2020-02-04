@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int numberOfCards=0,sCards=0,dCards=0;
+    cin>>numberOfCards;
+    int temp=numberOfCards;
+    int arrayOfCards[numberOfCards];
+    for(int index1=0;index1<numberOfCards;index1++){
+        cin>>arrayOfCards[index1];
+    }
+    for(int index2=1;index2<=numberOfCards;index2++){
+        if(index2%2==1){
+            if(arrayOfCards[0]>=arrayOfCards[temp-1]){
+                sCards+=arrayOfCards[0];
+                for(int index3=0;index3<temp-1;index3++){
+                    arrayOfCards[index3]=arrayOfCards[index3+1];
+                }
+                arrayOfCards[temp-1]=0;
+                temp-=1;
+            }
+            else if(arrayOfCards[0]<arrayOfCards[temp-1]){
+                sCards+=arrayOfCards[temp-1];
+                arrayOfCards[temp-1]=0;
+                temp-=1;
+            }
+        }
+        else if(index2%2==0){
+            if(arrayOfCards[0]>=arrayOfCards[temp-1]){
+                dCards+=arrayOfCards[0];
+                for(int index3=0;index3<temp-1;index3++){
+                    arrayOfCards[index3]=arrayOfCards[index3+1];
+                }
+                arrayOfCards[temp-1]=0;
+                temp-=1;
+            }
+            else if(arrayOfCards[0]<arrayOfCards[temp-1]){
+                dCards+=arrayOfCards[temp-1];
+                arrayOfCards[temp-1]=0;
+                temp-=1;
+            }
+        }
+    }
+    cout<<sCards<<" "<<dCards<<endl;
+    return 0;
+}
