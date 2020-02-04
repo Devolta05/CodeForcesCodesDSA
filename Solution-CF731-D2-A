@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cstdlib>
+ 
+using namespace std;
+ 
+int main()
+{
+    string passedName;
+    char startPos='a';
+    int numbOfRotations=0;
+    char previousLetter=startPos;
+    cin>>passedName;
+    for(int index1=0;index1<100 && passedName[index1]!='\0';index1++)
+    {
+        char letterInName=passedName[index1];
+        int clockWise=abs((int)letterInName-(int)previousLetter);
+        int antiClockWise=(26-abs((int)letterInName-(int)previousLetter));
+        numbOfRotations+=min(clockWise,antiClockWise);
+        previousLetter=letterInName;
+    }
+    cout<<numbOfRotations<<endl;
+    return 0;
+}
