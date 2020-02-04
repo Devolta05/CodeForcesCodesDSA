@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string.h>
+ 
+using namespace std;
+ 
+int main(){
+    char string_1[100],string_2[100];
+    int counter=0;
+    cin>>string_1;
+    cin>>string_2;
+    for(int ind=0;ind<100 && string_1[ind]!='\0';ind++){
+        if(int(tolower(string_1[ind]))<int(tolower(string_2[ind]))){
+            cout<<-1;
+            counter++;
+            break;}
+        else if(int(tolower(string_1[ind]))>int(tolower(string_2[ind]))){
+            cout<<1;
+            counter++;
+            break;}
+    }
+    if (counter==0){
+        cout<<0;
+    }
+    return 0;
+}
