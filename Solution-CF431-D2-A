@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+    int a1,a2,a3,a4,calorieUsed=0;
+    cin>>a1>>a2>>a3>>a4;
+    string boxElements;
+    cin>>boxElements;
+    int length_of_string=boxElements.length();
+    for(int index1=0;index1<length_of_string;index1++){
+        char characterAtPosition=boxElements.at(index1);;
+        if(characterAtPosition=='1'){
+            calorieUsed+=a1;
+        }
+        else if(characterAtPosition=='2'){
+            calorieUsed+=a2;
+        }
+        else if(characterAtPosition=='3'){
+            calorieUsed+=a3;
+        }
+        else if(characterAtPosition=='4'){
+            calorieUsed+=a4;
+        }
+    }
+    cout<<calorieUsed<<endl;
+    return 0;
+}
+
