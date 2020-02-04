@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int numOfEvents=0,Untreated=0,numOfficers=0;
+   cin>>numOfEvents;
+   int arrayEvents[numOfEvents];
+   for(int index1=0;index1<numOfEvents;index1++){
+        cin>>arrayEvents[index1];
+   }
+   for(int index2=0;index2<numOfEvents;index2++){
+        if(arrayEvents[0]==-1 && index2==0)
+            Untreated+=1;
+        else if(arrayEvents[0]>0 && index2==0)
+            numOfficers+=arrayEvents[0];
+        else if(index2!=0){
+            if(arrayEvents[index2]>0){
+                numOfficers+=arrayEvents[index2];
+            }
+            else if(numOfficers!=0){
+                numOfficers-=1;
+            }
+            else if(numOfficers==0){
+                Untreated++;
+            }
+        }
+   }
+   cout<<Untreated<<endl;
+   return 0;
+}
