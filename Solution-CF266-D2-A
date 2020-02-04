@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int num_of_stones=0;
+    cin>>num_of_stones;
+    int similarStones=0;
+    char arrayStones[num_of_stones];
+    for(int index1=0;index1<num_of_stones;index1++){
+        cin>>arrayStones[index1];
+    }
+    for(int index2=0;index2<num_of_stones;index2++){
+        if(int(arrayStones[index2])==int(arrayStones[index2+1]))
+            similarStones++;
+    }
+    if(similarStones!=0)
+        cout<<similarStones<<endl;
+    else
+        cout<<'0'<<endl;
+    return 0;
+}
+
