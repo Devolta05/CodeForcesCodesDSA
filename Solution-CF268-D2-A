@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int numberOfTeams;
+    cin>>numberOfTeams;
+    int teamUniforms[numberOfTeams][2];
+    int guestUniform=0;
+    for(int index1=0;index1<numberOfTeams;index1++){
+        cin>>teamUniforms[index1][0];
+        cin>>teamUniforms[index1][1];
+    }
+    for(int index2=0;index2<numberOfTeams;index2++){
+        for(int index3=index2+1;index3<numberOfTeams;index3++){
+            if(teamUniforms[index2][0]==teamUniforms[index3][1] || teamUniforms[index2][1]==teamUniforms[index3][0]){
+                guestUniform++;
+            }
+            if(teamUniforms[index2][0]==teamUniforms[index3][1] && teamUniforms[index2][1]==teamUniforms[index3][0]){
+                guestUniform++;
+            }
+        }
+    }
+    cout<<guestUniform<<endl;
+    return 0;
+}
+ 
