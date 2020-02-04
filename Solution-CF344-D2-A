@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int number_of_magnets=0, numberOfGroups=0;
+    cin>>number_of_magnets;
+    int magnetOrientation[number_of_magnets];
+    for(int index1=0;index1<number_of_magnets;index1++){
+        if(index1==0){
+            cin>>magnetOrientation[0];
+            numberOfGroups++;
+        }
+        if(index1!=0){
+            cin>>magnetOrientation[index1];
+            if(magnetOrientation[index1]!=magnetOrientation[index1-1])
+                numberOfGroups++;
+        }
+    }
+    cout<<numberOfGroups<<endl;
+    return 0;
+}
+
