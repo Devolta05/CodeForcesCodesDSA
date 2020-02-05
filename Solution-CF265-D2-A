@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string instructStones;
+    string stonePos;
+    cin>>stonePos;
+    cin>>instructStones;
+    int posValue=0;
+    char startPos=stonePos[posValue];
+    char currentPos=startPos;
+    for(int index1=0;index1<instructStones.length();index1++){
+        if(instructStones[index1]==currentPos){
+            posValue++;
+            currentPos=stonePos[posValue];
+        }
+    }
+    cout<<posValue+1<<endl;
+    return 0;
+}
