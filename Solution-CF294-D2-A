@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int numberOfWires=0;
+    cin>>numberOfWires;
+    int birdArr[numberOfWires];
+    for(int index1=0; index1<numberOfWires; index1++)
+    {
+        cin>>birdArr[index1];
+    }
+    int numberOfShots=0;
+    cin>>numberOfShots;
+    int birdPositionFromLeft=0;
+    int wirePosition=0;
+    for(int index2=0; index2<numberOfShots; index2++)
+    {
+        cin>>wirePosition;
+        cin>>birdPositionFromLeft;
+        if(wirePosition==1){
+            birdArr[wirePosition]+=(birdArr[wirePosition-1]-birdPositionFromLeft);
+            //birdArr[wirePosition-2]+=birdPositionFromLeft-1;
+            birdArr[wirePosition-1]=0;
+        }
+        else if(wirePosition==numberOfWires){
+            //birdArr[wirePosition]+=(birdArr[wirePosition-1]-birdPositionFromLeft);
+            birdArr[wirePosition-2]+=birdPositionFromLeft-1;
+            birdArr[wirePosition-1]=0;
+        }
+        else{
+            birdArr[wirePosition]+=(birdArr[wirePosition-1]-birdPositionFromLeft);
+            birdArr[wirePosition-2]+=birdPositionFromLeft-1;
+            birdArr[wirePosition-1]=0;
+        }
+    }
+    for(int index3=0;index3<numberOfWires;index3++){
+        cout<<birdArr[index3]<<endl;
+    }
+    return 0;
+}
