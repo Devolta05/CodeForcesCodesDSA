@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int dice[6]={1,2,3,4,5,6};
+    int yakkoPoints;
+    int wakkoPoints;
+    cin>>yakkoPoints;
+    cin>>wakkoPoints;
+    int numberStart=0;
+    int maxPoints=max(yakkoPoints,wakkoPoints);
+    for(int index1=0;index1<6;index1++){
+        if(maxPoints==dice[index1]){
+            numberStart=index1;
+            break;
+        }
+    }
+    int numberOfFavEvents=6-numberStart;
+    if(numberOfFavEvents==1){
+       cout<<"1/6"<<endl;
+    }
+    else if(numberOfFavEvents==2){
+        cout<<"1/3"<<endl;
+    }
+    else if(numberOfFavEvents==3){
+        cout<<"1/2"<<endl;
+    }
+    else if(numberOfFavEvents==4){
+        cout<<"2/3"<<endl;
+    }
+    else if(numberOfFavEvents==5){
+        cout<<"5/6"<<endl;
+    }
+    else if(numberOfFavEvents==6){
+        cout<<"1/1"<<endl;
+    }
+    return 0;
+}
+
