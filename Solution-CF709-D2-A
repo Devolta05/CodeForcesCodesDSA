@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int numberOfOranges=0;
+    cin>>numberOfOranges;
+    int maxSizeOfOrange=0;
+    cin>>maxSizeOfOrange;
+    int limitOfWaste=0;
+    cin>>limitOfWaste;
+    int sumOfOranges=0;
+    int currentOrange=0;
+    int numOfTimesWasteEmptied=0;
+    for(int index1=0; index1<numberOfOranges; index1++)
+    {
+        cin>>currentOrange;
+        if(currentOrange>maxSizeOfOrange)
+            continue;
+        else
+        {
+            sumOfOranges+=currentOrange;
+        }
+        if(sumOfOranges>limitOfWaste)
+        {
+            sumOfOranges=0;
+            numOfTimesWasteEmptied++;
+        }
+    }
+    cout<<numOfTimesWasteEmptied<<endl;
+    return 0;
+}
+
