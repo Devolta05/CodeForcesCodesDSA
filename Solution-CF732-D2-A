@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int priceShovel=0;
+    cin>>priceShovel;
+    int changeValue;
+    cin>>changeValue;
+    int multiplier=1;
+    bool multipleNotFound=true;
+    while(multipleNotFound==true){
+        int currentValue=priceShovel*multiplier;
+        if(currentValue%10==0 || currentValue%10==changeValue){
+            multipleNotFound=false;
+            break;
+        }
+        multiplier++;
+    }
+    cout<<multiplier<<endl;
+    return 0;
+}
