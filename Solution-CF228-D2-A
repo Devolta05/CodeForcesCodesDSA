@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int shoeArr[4];
+    int diffShoe=0;
+    for(int index=0;index<4;index++){
+        cin>>shoeArr[index];
+    }
+    for(int index1=0;index1<4;index1++){
+        for(int index2=index1+1;index2<4;index2++){
+            if(shoeArr[index1]==shoeArr[index2]){
+                diffShoe++;break;
+            }
+        }
+    }
+    cout<<diffShoe<<endl;
+    return 0;
+}
+
