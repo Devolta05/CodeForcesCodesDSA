@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    int presents[n+1];
+    for(int i=1;i<n+1;i++){
+        cin>>presents[i];
+    }
+    int index=1;
+    while(index<=n){
+      for(int i=1;i<n+1;i++){
+        if(presents[i]==index){
+            cout<<i<<" ";
+            index++;
+        }
+      }
+    }
+    return 0;
+}
